@@ -35,7 +35,7 @@ export default function RiveButton() {
       <div className="rive-button-container relative w-3/4 pt-[37.88%] mx-auto">
         <div className="absolute top-0 left-0 bottom-0 right-0">
           <a
-            href="/Chat"
+            href="/Home"
             aria-label="Start now; explore the Rive.app homepage"
             className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center w-full h-full bg-transparent text-white text-sm lg:text-lg"
             style={{ textShadow: "1px 1px 1px rgba(0, 0, 0, 0.5)" }}
