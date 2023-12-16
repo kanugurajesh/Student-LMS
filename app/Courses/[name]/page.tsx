@@ -99,7 +99,7 @@ export default function Page({ params }: { params: { name: string } }) {
                     <RiveComponent className="rive-container"/>
                 </div>
             </div>
-            <div className='flex flex-col mt-5 items-center h-screen gap-5'>
+            <div className='flex flex-col mt-5 items-center h-screen gap-6'>
                 <Progress value={progress} className={cn("w-[60%]")} />
                 <div className='w-[60%] flex justify-center'>
                     <h1 className='text-2xl font-bold'>{question?.question}</h1>
