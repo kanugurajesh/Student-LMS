@@ -1,8 +1,6 @@
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100vh;
 }
 
 
@@ -52,7 +50,7 @@
     margin: auto;
     display: flex;
     -webkit-box-align: center;
-    align-items: center;
+    justify-content: center;
     -webkit-box-pack: justify;
     justify-content: space-between;
     padding: 2rem 10rem;
@@ -132,10 +130,10 @@
 }
 
 .heroimg{
-    width: 600px;
-    height: 600px;
-    display: grid;
-    place-items: center;
+    /* width: 600px; */
+    /* height: 600px; */
+    /* display: grid; */
+    /* place-items: center; */
     clip-path: polygon(0px 0px, 100% 0px, 100% 0px, 0px 0px);
     transform: translateY(50px) scale(0.9) translateZ(0px);
     animation: 1.1s cubic-bezier(0.77, 0.2, 0.05, 1) 0.4s 1 normal forwards running frameClip;
