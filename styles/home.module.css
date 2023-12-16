@@ -1,0 +1,282 @@
+@-webkit-keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg) scale(1);
+        -ms-transform: rotate(0deg) scale(1);
+        transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg) scale(15);
+        -ms-transform: rotate(360deg) scale(15);
+        transform: rotate(360deg) scale(15);
+        -webkit-transform: rotate(360deg) scale(15);
+    }
+}
+
+@keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg) scale(1);
+        -ms-transform: rotate(0deg) scale(1);
+        transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg) scale(15);
+        -ms-transform: rotate(360deg) scale(15);
+        transform: rotate(360deg) scale(15);
+        -webkit-transform: rotate(360deg) scale(15);
+    }
+}
+
+.evThOG::after {
+    content: "";
+    width: clamp(100px,5vw,125px);
+    height: clamp(100px,5vw,125px);
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    border-radius: 50%;
+    background-color: #b9debf;
+    image-rendering: crisp-edges;
+    -webkit-animation: 1.5s loaderAfter linear forwards;
+    animation: 1.5s loaderAfter linear forwards;
+}
+
+/*!sc*/
+@-webkit-keyframes loaderAfter {
+    0% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(0.1);
+        -ms-transform: scale(0.1);
+        transform: scale(0.1);
+        -webkit-transform: scale(0.1);
+    }
+
+    100% {
+        -webkit-transform: scale(15);
+        -ms-transform: scale(15);
+        transform: scale(15);
+        -webkit-transform: scale(15);
+    }
+}
+
+/*!sc*/
+@keyframes loaderAfter {
+    0% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(0.1);
+        -ms-transform: scale(0.1);
+        transform: scale(0.1);
+        -webkit-transform: scale(0.1);
+    }
+
+    100% {
+        -webkit-transform: scale(15);
+        -ms-transform: scale(15);
+        transform: scale(15);
+        -webkit-transform: scale(15);
+    }
+}
+
+
+/* body{
+    color: rgb(31, 28, 21);
+    line-height: 1.4;
+    font-family: TTCommonsProVar, sans-serif;
+} */
+/* html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth !important;
+} */
+/* ::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(96, 96, 96);
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(144, 144, 144);
+    border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+} */
+.logobar{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 1rem;
+}
+.logoText{
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgb(74, 71, 62);
+}
+.img{
+    height: 45px;
+    width: 45px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-top: 1rem; */
+    padding: 2rem 6rem;
+    z-index: 5;
+    transform: translateY(-100px) translateZ(0px);
+    animation: 0.75s cubic-bezier(0.77, 0.2, 0.05, 1) 0.4s 1 normal forwards running navEnter;
+}
+.navitems{
+    display: flex;
+    /* gap: 2rem; */
+    gap: 85px;
+    padding: 0 4rem;
+}
+.navitems div{
+    font-size: 1.25em;
+    font-weight: 600;
+    position: relative;
+    padding: 0.75rem 0px 2px;
+    text-align: center;
+}
+.navitems div a{
+    color: rgb(74,71,62);
+}
+
+.navitems div:hover{
+    scale: 1.2;
+    transition: 1.5s ;
+}
+@keyframes navEnter{
+    100%{
+        transform: translateY(0px) translateZ(0px);
+    }
+}
+
+.herosection{
+    width: 100%;
+    height: auto;
+    max-width: 1700px;
+    margin: auto;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 2rem 10rem;
+}
+.herocontent{
+    width: 70%;
+}
+.h1{
+    font-family: TTCommonsProVar, sans-serif;
+    margin: 0.67em 0px;
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bolder;
+}
+.heroheading{
+    /* font-size: clamp(2.25rem, 1.5vw, 3rem); */
+    font-size: 2.5vh;
+    margin-bottom: 1rem;
+    transform: translateY(-50px) translateZ(0px);
+    opacity: 0;
+    animation: 1s cubic-bezier(0.77, 0.2, 0.05, 1) 0.4s 1 normal forwards running pageTitleEnter;
+}
+@keyframes pageTitleEnter{
+    100%{
+        opacity: 1;
+        transform: translateY(0px) translateZ(0px);
+    }
+}
+
+.wrapper{
+    transform: translateY(50px) translateZ(0px);
+    opacity: 0;
+    animation: 1s cubic-bezier(0.77, 0.2, 0.05, 1) 0.4s 1 normal forwards running infoEnter;
+}
+@keyframes infoEnter {
+    100% {
+        opacity: 1;
+        transform: translateY(0px) translateZ(0px);
+    }
+}
+
+.hero-sodi{
+    font-size: 1.5rem;
+    font-weight: 450;
+}
+.p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.downloadbutton{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    height: 75px;
+    width: 250px;
+    border-radius: 16px;
+}
+
+.heroimg{
+    width: 600px;
+    height: 600px;
+    display: grid;
+    place-items: center;
+    clip-path: polygon(0px 0px, 100% 0px, 100% 0px, 0px 0px);
+    transform: translateY(50px) scale(0.9) translateZ(0px);
+    animation: 1.1s cubic-bezier(0.77, 0.2, 0.05, 1) 0.4s 1 normal forwards running frameClip;
+}
+@keyframes frameClip{
+    100% {
+        transform: translateY(0px) scale(1) translateZ(0px);
+        clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);
+    }
+}
+.heroimg img{
+    width: 300px;
+    height: 600px;
+}
+@media only screen and (max-width: 641px){
+.herosection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0rem;
+}
+}
+@media only screen and (max-width: 1025px)
+{
+.herosection {
+    padding: 2rem clamp(1rem, 6vw, 10rem);
+    gap: 1rem;
+}
+}
