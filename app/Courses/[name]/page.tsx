@@ -7,7 +7,7 @@ import { Progress } from "@/components/ui/progress"
 import { cn } from '@/lib/utils';
 import React from 'react'
 import { Button } from "@/components/ui/button";
-import { ChangeEvent, SyntheticEvent, useRef } from "react";
+import { useRef } from "react";
 import { useRive, RiveState, useStateMachineInput, StateMachineInput, Layout, Fit, Alignment, RiveProps } from 'rive-react';
 
 import "@/styles/LoginFormComponent.css";
