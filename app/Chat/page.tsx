@@ -119,7 +119,7 @@ export default function Home() {
   }, [response]);
 
   return (
-    <main className={`flex flex-col items-center h-screen gap-4`}>
+    <main className={`flex flex-col items-center h-screen gap-4 mt-10`}>
       <Toaster />
       <div className="flex gap-2 items-center mb-5">
         <MessageCircleCode size="64" />
