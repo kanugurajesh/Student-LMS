@@ -10,7 +10,7 @@ export default function RootLayout({
     <main>
         <ThemeProvider
           attribute='class'
-          defaultTheme='dark'
+          defaultTheme='light'
           enableSystem
           disableTransitionOnChange
         >
