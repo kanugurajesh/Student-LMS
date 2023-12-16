@@ -50,16 +50,6 @@ export default function Page({ params }: { params: { name: string } }) {
         }),
     });
 
-    // const onSubmit = (e: SyntheticEvent) => {
-    //     setLoginButtonText('Checking...');
-    //     setTimeout(() => {
-    //         setLoginButtonText('Login');
-    //         passValue === LOGIN_PASSWORD ? trigSuccessInput.fire() : trigFailInput.fire();
-    //     }, 1500);
-    //     e.preventDefault();
-    //     return false;
-    // };
-
     // State Machine Inputs
     const isCheckingInput: StateMachineInput = useStateMachineInput(riveInstance, STATE_MACHINE_NAME, 'isChecking');
     const numLookInput: StateMachineInput = useStateMachineInput(riveInstance, STATE_MACHINE_NAME, 'numLook');
@@ -109,7 +99,7 @@ export default function Page({ params }: { params: { name: string } }) {
                     <RiveComponent className="rive-container"/>
                 </div>
             </div>
-            <div className='flex flex-col mt-5 items-center h-screen gap-10'>
+            <div className='flex flex-col mt-5 items-center h-screen gap-5'>
                 <Progress value={progress} className={cn("w-[60%]")} />
                 <div className='w-[60%] flex justify-center'>
                     <h1 className='text-2xl font-bold'>{question?.question}</h1>
