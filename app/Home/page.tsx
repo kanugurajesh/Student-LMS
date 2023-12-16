@@ -93,6 +93,9 @@ export default function Home() {
                     <Link href="/icons/graphql">
                         <Image src="/icons/graphql.svg" width={90} height={90} alt="graphql" className="transition ease-in-out duration-500 hover:scale-110" />
                     </Link>
+                    <Link href="/icons/kubernetes">
+                        <Image src="/icons/kubernetes.svg" width={90} height={90} alt="graphql" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
                 </div>
             </div>
         </div>
