@@ -48,12 +48,12 @@ export default function Home() {
                     </div>
                 </div>
                 <div className={cn(`flex flex-wrap w-[500px] gap-6 p-2 ${styles.heroimg}`)}>
-                    <Image src="/icons/html.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
+                    <Image src="/icons/html5.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
                     <Image src="/icons/css.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
                     <Image src="/icons/javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
                     <Image src="/icons/typescript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
                     <Image src="/icons/mongodb.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/react.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
+                    <Image src="/icons/reactP.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
                     <Image src="/icons/express.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
                     <Image src="/icons/tailwindcss.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
                     <Image src="/icons/express.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
