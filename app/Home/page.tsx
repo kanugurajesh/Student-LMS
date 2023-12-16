@@ -10,10 +10,10 @@ export default function Home() {
             </div>
 
             <div className={styles.navitems}>
-                <div><a href="#about">ChatAssist</a></div>
-                <div><a href="#team">Team</a></div>
-                <div><a href="#download">Courses</a></div>
-                <div><a href="#blog">Blog</a></div>
+                <div><a href="#about" className={styles.navlist}>ChatAssist</a></div>
+                <div><a href="#team" className={styles.navlist}>Team</a></div>
+                <div><a href="#download" className={styles.navlist}>Courses</a></div>
+                <div><a href="#blog" className={styles.navlist}>Blog</a></div>
             </div>
 
         </div>
