@@ -6,11 +6,13 @@ import { useEffect, useState } from 'react';
 import { Progress } from "@/components/ui/progress"
 import { cn } from '@/lib/utils';
 import React from 'react'
+import { Button } from "@/components/ui/button";
 
 export default function Page({ params }: { params: { name: string } }) {
     
     const name = params.name;
-    const [questions, setQuestions] = useState([{}]);
+    const [count, setCount] = useState(0);
+    const [content, setContent] = useState();
     const [question, setQuestion] = useState();
     const [progress, setProgress] = useState(10);
 
@@ -24,8 +26,8 @@ export default function Page({ params }: { params: { name: string } }) {
         const fetchData = async () => {
             try {
                 const content = await readFile(name);
-                setQuestions(content?.questions);
                 setQuestion(content?.questions[0]);
+                setContent(content);
             } catch (error) {
                 console.error("Error reading file:", error);
             }
@@ -68,9 +70,13 @@ export default function Page({ params }: { params: { name: string } }) {
                         <Label htmlFor="r4">{question?.options[3]}</Label>
                     </div>
                 </RadioGroup>
-                <button onClick={()=>{
+                <Button onClick={()=>{
                     setProgress(progress+10)
-                }}>update</button>
+                    setCount(count+1)
+                    // @ts-ignore
+                    setQuestion(content?.questions[count+1])
+                }
+                }>Next</Button>
             </div>
         </>
     )
