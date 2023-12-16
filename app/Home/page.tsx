@@ -23,7 +23,7 @@ export default function Home() {
                 <div className={styles.heroheading}><h1 className={styles.h1}>What is GraphifyEd</h1></div>
                     <div className={styles.wrapper}>
                         <p className={`${styles.heroheading} ${styles.p}`}>GraphifyEd is a unique student learning management system which aims at making learning as addictive as gaming</p>
-                        <a href="https://pixelos.net/" target="_blank">
+                        <a href="" target="_blank">
                             <button className={styles.downloadbutton}>Start Learning</button>
                         </a>
                     </div>
