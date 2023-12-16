@@ -1,8 +1,6 @@
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100vh;
 }
 
 
@@ -52,7 +50,7 @@
     margin: auto;
     display: flex;
     -webkit-box-align: center;
-    align-items: center;
+    justify-content: center;
     -webkit-box-pack: justify;
     justify-content: space-between;
     padding: 2rem 10rem;
