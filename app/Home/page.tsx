@@ -17,7 +17,7 @@ export default function Home() {
                 <div><a href="https://kanugurajesh.github.io" className={styles.navlist}>Blog</a></div>
             </div>
         </div>
-                <div className={styles.herosection}>
+            <div className={`${styles.herosection} mt-20`}>
                     <div className={styles.herocontent}>
                         <div className={styles.heroheading}><h1 className={styles.h1}>What is GraphifyEd</h1>
                     
@@ -32,22 +32,22 @@ export default function Home() {
                             </div>
                 </div>
                 <div className={cn(`flex flex-wrap w-[500px] gap-8 ${styles.heroimg}`)}>
-                    <Image src="/icons/HTML.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/NodeJs.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Next.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Redux.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Bootstrap.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/html.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/css.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/typescript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/mongodb.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/react.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/express.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/tailwindcss.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/express.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/nextjs.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/azure.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/devops.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/github.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/git.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/docker.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="/icons/graphql.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
                 </div>
             </div>
         </div>
