@@ -25,6 +25,7 @@
 }
 
 .around {
+  margin-top: 0;
   background-color: #d6e2ea;
 }
 
@@ -95,8 +96,6 @@
 .rive-container {
   width: 500px;
   height: 400px;
-  /* min-height: 300px;
-  min-width: 400px; */
   margin: 0 auto;
 }
 
