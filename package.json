@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.28.1",
+    "@rive-app/react-canvas": "^3.0.57",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18"
