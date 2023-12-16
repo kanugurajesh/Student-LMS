@@ -42,8 +42,8 @@ export default function Home() {
                         <p className={`${styles.heroheading} ${styles.p}`}>
                             GraphifyEd is a unique student learning management system which aims at making learning as addictive as gaming. Start your journey with GraphifyEd and earn points, badges and rewards as you learn.
                         </p>
-                        <Link href="/Courses">
-                            <button className={styles.btnpink}>Start Learning</button>
+                        <Link href="/Courses/html5">
+                            <button className={styles.btnpink}>Select Logo and Learn</button>
                         </Link>
                     </div>
                 </div>
