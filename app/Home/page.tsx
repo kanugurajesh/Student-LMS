@@ -69,31 +69,31 @@ export default function Home() {
                     <Link href="/Courses/express">
                         <Image src="/icons/express.svg" width={90} height={90} alt="express" className="transition ease-in-out duration-500 hover:scale-110" />
                     </Link>
-                    <Link href="/icons/tailwindcss">
+                    <Link href="/Courses/tailwindcss">
                         <Image src="/icons/tailwindcss.svg" width={90} height={90} alt="tailwindcss" className="transition ease-in-out duration-500 hover:scale-110" />
                     </Link>
-                    <Link href="/icons/nextjs">                        
+                    <Link href="/Courses/nextjs">                        
                         <Image src="/icons/nextjs.svg" width={90} height={90} alt="nextjs" className="transition ease-in-out duration-500 hover:scale-110" />
                     </Link>
-                    <Link href="/icons/azure">
+                    <Link href="/Courses/azure">
                         <Image src="/icons/azure.svg" width={90} height={90} alt="azure" className="transition ease-in-out duration-500 hover:scale-110" />
                     </Link>
-                    <Link href="/icons/devops">
+                    <Link href="/Courses/devops">
                         <Image src="/icons/devops.svg" width={90} height={90} alt="devops" className="transition ease-in-out duration-500 hover:scale-110" />
                     </Link>
-                    <Link href="/icons/github">
+                    <Link href="/Courses/github">
                         <Image src="/icons/github.svg" width={90} height={90} alt="github" className="transition ease-in-out duration-500 hover:scale-110" />
                     </Link>
-                    <Link href="/icons/git">
+                    <Link href="/Courses/git">
                         <Image src="/icons/git.svg" width={90} height={90} alt="git" className="transition ease-in-out duration-500 hover:scale-110" />
                     </Link>
-                    <Link href="/icons/docker">
+                    <Link href="/Courses/docker">
                         <Image src="/icons/docker.svg" width={90} height={90} alt="docker" className="transition ease-in-out duration-500 hover:scale-110" />
                     </Link>
-                    <Link href="/icons/graphql">
+                    <Link href="/Courses/graphql">
                         <Image src="/icons/graphql.svg" width={90} height={90} alt="graphql" className="transition ease-in-out duration-500 hover:scale-110" />
                     </Link>
-                    <Link href="/icons/kubernetes">
+                    <Link href="/Courses/kubernetes">
                         <Image src="/icons/kubernetes.svg" width={90} height={90} alt="graphql" className="transition ease-in-out duration-500 hover:scale-110" />
                     </Link>
                 </div>
