@@ -27,11 +27,11 @@ export default function Home() {
                                     GraphifyEd is a unique student learning management system which aims at making learning as addictive as gaming. Start your journey with GraphifyEd and earn points, badges and rewards as you learn.
                                 </p>
                                 <a href="" target="_blank">
-                                    <button className={styles.downloadbutton}>Start Learning</button>
+                                    <button className={styles.btnpink}>Start Learning</button>
                                 </a>
                             </div>
                 </div>
-                <div className={cn(`flex flex-wrap w-[500px] gap-8 ${styles.heroimg}`)}>
+                <div className={cn(`flex flex-wrap w-[500px] gap-6 p-2 ${styles.heroimg}`)}>
                     <Image src="/icons/html.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
                     <Image src="/icons/css.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
                     <Image src="/icons/javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
