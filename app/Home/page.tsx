@@ -48,22 +48,51 @@ export default function Home() {
                     </div>
                 </div>
                 <div className={cn(`flex flex-wrap w-[500px] gap-6 p-2 ${styles.heroimg}`)}>
-                    <Image src="/icons/html5.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/css.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/typescript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/mongodb.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/reactP.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/express.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/tailwindcss.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/express.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/nextjs.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/azure.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/devops.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/github.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/git.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/docker.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
-                    <Image src="/icons/graphql.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110" />
+                    <Link href="/Courses/html5">
+                        <Image src="/icons/html5.svg" width={90} height={90} alt="html5" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/Courses/css3">
+                        <Image src="/icons/css3.svg" width={90} height={90} alt="css3" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/Courses/javascript">
+                        <Image src="/icons/javascript.svg" width={90} height={90} alt="javascript" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/Courses/typescript">
+                        <Image src="/icons/typescript.svg" width={90} height={90} alt="typescript" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/Courses/mongodb">
+                        <Image src="/icons/mongodb.svg" width={90} height={90} alt="mongodb" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/Courses/reactjs">
+                        <Image src="/icons/reactjs.svg" width={90} height={90} alt="reactjs" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/Courses/express">
+                        <Image src="/icons/express.svg" width={90} height={90} alt="express" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/icons/tailwindcss">
+                        <Image src="/icons/tailwindcss.svg" width={90} height={90} alt="tailwindcss" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/icons/nextjs">                        
+                        <Image src="/icons/nextjs.svg" width={90} height={90} alt="nextjs" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/icons/azure">
+                        <Image src="/icons/azure.svg" width={90} height={90} alt="azure" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/icons/devops">
+                        <Image src="/icons/devops.svg" width={90} height={90} alt="devops" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/icons/github">
+                        <Image src="/icons/github.svg" width={90} height={90} alt="github" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/icons/git">
+                        <Image src="/icons/git.svg" width={90} height={90} alt="git" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/icons/docker">
+                        <Image src="/icons/docker.svg" width={90} height={90} alt="docker" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
+                    <Link href="/icons/graphql">
+                        <Image src="/icons/graphql.svg" width={90} height={90} alt="graphql" className="transition ease-in-out duration-500 hover:scale-110" />
+                    </Link>
                 </div>
             </div>
         </div>
