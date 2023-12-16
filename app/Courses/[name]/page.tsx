@@ -3,7 +3,6 @@
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { useEffect, useState } from 'react';
-import { Input } from "@/components/ui/input"
 import { Progress } from "@/components/ui/progress"
 import { cn } from '@/lib/utils';
 import React from 'react'
@@ -38,7 +37,6 @@ export default function Page({ params }: { params: { name: string } }) {
         <>
             <div className='flex flex-col mt-5 items-center h-screen gap-10'>
                 {/* @ts-ignore */}
-                {/* <pre>{question?.options[]}</pre> */}
                 <Progress value={progress} className={cn("w-[60%]")} />
                 <div className='w-[60%] flex justify-center'>
                     {/* @ts-ignore */}

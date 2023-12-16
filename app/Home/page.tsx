@@ -5,24 +5,26 @@ import styles from "@/styles/home.module.css"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { UserButton } from "@clerk/nextjs"
+import toast, {Toaster} from "react-hot-toast"
 
 export default function Home() {
 
     return (
         <div className={styles.container}>
+            <Toaster />
             <div className={styles.navbar}>
                 <div className={styles.logobar}>
                     <Image src="/logo.png" width={30} height={30} alt="logo" />
                     <div className={styles.logoText}>raphifyEd</div>
                 </div>
-                <div className={styles.navitems}>
+                <div className={`${styles.navitems}`}>
                     <Link href="/Home" className={styles.navlist}>
                         About
                     </Link>
                     <Link href="/Chat" className={styles.navlist}>
                         Chat
                     </Link>
-                    <Link href="/Courses" className={styles.navlist}>
+                    <Link href="/Home" className={styles.navlist} onClick={() => toast.success("select a logo to begin the course")}>
                         Courses
                     </Link>
                     <Link href="https://kanugurajesh.github.io" className={styles.navlist}>
