@@ -1,8 +1,7 @@
 .logobar{
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
-    gap: 1rem;
+    gap: 3px;
 }
 
 .logoText{
@@ -20,7 +19,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding-top: 1rem; */
     padding: 2rem 6rem;
     z-index: 5;
     transform: translateY(-100px) translateZ(0px);
@@ -29,7 +27,7 @@
 
 .navitems{
     display: flex;
-    gap: 85px;
+    gap: 70px;
     padding: 0 4rem;
 }
 
@@ -104,6 +102,9 @@
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    font-weight: 450;
 }
 
 .downloadbutton{
