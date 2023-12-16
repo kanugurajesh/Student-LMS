@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 export default function Page({ params }: { params: { name: string } }) {
     const name = params.name;
-    const [fileContent, setFileContent] = useState<string | null>(null);
+    const [questions, setQuestions] = useState([{}]);
 
     // read the file from the file system with the `name`
     const readFile = async (name: string) => {
@@ -16,19 +16,18 @@ export default function Page({ params }: { params: { name: string } }) {
         const fetchData = async () => {
             try {
                 const content = await readFile(name);
-                setFileContent(content);
+                setQuestions(content?.questions);
             } catch (error) {
                 console.error("Error reading file:", error);
             }
         };
-
         fetchData();
     }, [name]);
 
     return (
         <div>
-            <h1>{name}</h1>
-            <pre>{JSON.stringify(fileContent, null, 2)}</pre>
+            {/* @ts-ignore */}
+            <pre>{JSON.stringify(questions[9]?.question, null, 2)}</pre>
         </div>
     )
 }
