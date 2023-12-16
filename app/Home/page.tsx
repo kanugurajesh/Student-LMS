@@ -1,8 +1,15 @@
+"use client"
+
 import Image from "next/image"
 import styles from "@/styles/home.module.css"
 import { cn } from "@/lib/utils"
+import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 export default function Home() {
+
+    const router = useRouter();
+
   return (
     <div className={styles.container}>
         <div className={styles.navbar}>
@@ -11,10 +18,18 @@ export default function Home() {
                 <div className={styles.logoText}>raphifyEd</div>
             </div>
             <div className={styles.navitems}>
-                <div><a href="#" className={styles.navlist}>About</a></div>
-                <div><a href="#" className={styles.navlist}>ChatAssist</a></div>
-                <div><a href="#" className={styles.navlist}>Courses</a></div>
-                <div><a href="https://kanugurajesh.github.io" className={styles.navlist}>Blog</a></div>
+                <Link href="/Home" className={styles.navlist}>
+                    About
+                </Link>
+                <Link href="/Chat" className={styles.navlist}>
+                    Chat
+                </Link>
+                <Link href="/Courses" className={styles.navlist}>
+                    Courses
+                </Link>
+                <Link href="https://kanugurajesh.github.io" className={styles.navlist}>
+                    Blog
+                </Link>
             </div>
         </div>
             <div className={`${styles.herosection} mt-20`}>
@@ -26,9 +41,9 @@ export default function Home() {
                                 <p className={`${styles.heroheading} ${styles.p}`}>
                                     GraphifyEd is a unique student learning management system which aims at making learning as addictive as gaming. Start your journey with GraphifyEd and earn points, badges and rewards as you learn.
                                 </p>
-                                <a href="" target="_blank">
+                                <Link href="/Courses">
                                     <button className={styles.btnpink}>Start Learning</button>
-                                </a>
+                                </Link>
                             </div>
                 </div>
                 <div className={cn(`flex flex-wrap w-[500px] gap-6 p-2 ${styles.heroimg}`)}>
