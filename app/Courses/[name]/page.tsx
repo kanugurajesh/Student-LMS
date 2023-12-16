@@ -11,7 +11,11 @@ import { Button } from "@/components/ui/button";
 export default function Page({ params }: { params: { name: string } }) {
     
     const name = params.name;
+
+    // const [score, setScore] = useState(0);
+    const [score, setScore] = useState(0);
     const [count, setCount] = useState(0);
+    const [chosen, setChosen] = useState();
     const [content, setContent] = useState();
     const [question, setQuestion] = useState();
     const [progress, setProgress] = useState(10);
@@ -20,6 +24,22 @@ export default function Page({ params }: { params: { name: string } }) {
     const readFile = async (name: string) => {
         const markdown = await import(`@/data/${name}.d.ts`);
         return markdown.data;
+    }
+
+    const onNext = () => {
+        setProgress(progress+10)
+
+        setCount(count+1)
+
+        console.log(score)
+
+        // @ts-ignore
+        if (question?.correctOption == chosen) {
+            setScore(() => score + 1)
+        }
+
+        // @ts-ignore
+        setQuestion(content?.questions[count+1])
     }
 
     useEffect(() => {
@@ -47,34 +67,43 @@ export default function Page({ params }: { params: { name: string } }) {
                 <RadioGroup defaultValue="comfortable">
                     <div className="flex items-center space-x-2">
                         {/* @ts-ignore */}
-                        <RadioGroupItem value={question?.options[0]} id="r1" />
+                        <RadioGroupItem value={question?.options[0]} id="r1" onClick={(e)=>{
+                            // @ts-ignore
+                            setChosen(e.target.value)
+                        }}/>
                         {/* @ts-ignore */}
                         <Label htmlFor="r1">{question?.options[0]}</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                         {/* @ts-ignore */}
-                        <RadioGroupItem value={question?.options[1]}id="r2" />
+                        <RadioGroupItem value={question?.options[1]}id="r2" onClick={(e)=>{
+                            // @ts-ignore
+                            setChosen(e.target.value)
+                        }}/>
                         {/* @ts-ignore */}
                         <Label htmlFor="r2">{question?.options[1]}</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                         {/* @ts-ignore */}
-                        <RadioGroupItem value={question?.options[2]}id="r3" />
+                        <RadioGroupItem value={question?.options[2]}id="r3" onClick={(e)=>{
+                            // @ts-ignore
+                            setChosen(e.target.value)
+                        }}/>
                         {/* @ts-ignore */}
                         <Label htmlFor="r3">{question?.options[2]}</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                         {/* @ts-ignore */}
-                        <RadioGroupItem value={question?.options[3]}id="r4" />
+                        <RadioGroupItem value={question?.options[3]}id="r4" onClick={(e)=>{
+                            // @ts-ignore
+                            setChosen(e.target.value)
+                        }}/>
                         {/* @ts-ignore */}
                         <Label htmlFor="r4">{question?.options[3]}</Label>
                     </div>
                 </RadioGroup>
                 <Button onClick={()=>{
-                    setProgress(progress+10)
-                    setCount(count+1)
-                    // @ts-ignore
-                    setQuestion(content?.questions[count+1])
+                    onNext()
                 }
                 }>Next</Button>
             </div>
