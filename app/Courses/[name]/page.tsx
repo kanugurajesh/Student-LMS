@@ -31,8 +31,6 @@ export default function Page({ params }: { params: { name: string } }) {
     const inputRef = useRef(null);
 
     const STATE_MACHINE_NAME = 'Login Machine'
-    const LOGIN_PASSWORD = 'teddy';
-
 
     useEffect(() => {
         if (inputRef?.current && !inputLookMultiplier) {
