@@ -32,12 +32,12 @@ export default function Home() {
                             </div>
                 </div>
                 <div className={cn(`flex flex-wrap w-[500px] gap-8 ${styles.heroimg}`)}>
+                    <Image src="/icons/HTML.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
                     <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
-                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/NodeJs.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Next.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Redux.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
+                    <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Bootstrap.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
                     <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
                     <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>
                     <Image src="https://codehelp-portfolio-website.netlify.app/images/stack/Javascript.svg" width={90} height={90} alt="hero" className="transition ease-in-out duration-500 hover:scale-110"/>

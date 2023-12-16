@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['codehelp-portfolio-website.netlify.app']
+        domains: ['codehelp-portfolio-website.netlify.app','drive.google.com']
     }
 }
 
