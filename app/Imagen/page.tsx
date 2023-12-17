@@ -21,9 +21,21 @@ const ImageGenerator =  () => {
       method: 'POST',
       body: JSON.stringify({ 'text': `${text}` }), // Replace 'Your JSON payload here' with your actual JSON payload
       headers: {
-          'Content-Type': 'application/json',
+          "accept": "*/*",
+          "accept-language": "en-US,en;q=0.9",
+          "content-type": "application/json",
+          // "Referer": "http://localhost:3000/",
+          "Referrer-Policy": "strict-origin-when-cross-origin"
           },
       };
+
+      // fetch("http://129.154.41.10:5000/generate", {
+      //   "headers": {
+          
+      //   },
+      //   "body": "{\"text\":\"programming\"}",
+      //   "method": "POST"
+      // });
 
     await fetch('http://129.154.41.10:5000/generate', requestOptions)
       .then(response => response.json())
