@@ -1,54 +1,57 @@
-"use client";
+// @ts-nocheck
+"use client"
 import React, { useState } from "react";
+import { cn } from "@/lib/utils";
+import "@/styles/ai.css"
 
-const API_TOKEN = process.env.HUGGING_API_KEY;
+const ImageGenerator =  () => {
+  const [text, setText] = useState("");
 
-const ImageGenerationForm = () => {
-  const [loading, setLoading] = useState(false);
-  const [output, setOutput] = useState(null);
+  const onSubmit = async (e) => {
+    e.preventDefault();
 
-  const handleSubmit = async (event:any) => {
-    event.preventDefault();
-    setLoading(true);
+    // create a div element
+    const div = document.createElement("div");
+    div.id = "imagecontainer";
 
-    const input = event.target.elements.input.value;
-    const response = await fetch(
-      "https://api-inference.huggingface.co/models/prompthero/openjourney",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${API_TOKEN}`,
-        },
-        body: JSON.stringify({ inputs: input }),
-      }
-    );
+    // append div into the body
+    document.body.appendChild(div);
 
-    if (!response.ok) {
-      throw new Error("Failed to generate image");
-    }
+    const requestOptions = {
+      method: 'POST',
+      body: JSON.stringify({ 'text': `${text}` }), // Replace 'Your JSON payload here' with your actual JSON payload
+      headers: {
+          'Content-Type': 'application/json',
+          },
+      };
 
-    const blob = await response.blob();
-    // @ts-ignore
-    setOutput(URL.createObjectURL(blob));
-    setLoading(false);
-  };
+    await fetch('http://129.154.41.10:5000/generate', requestOptions)
+      .then(response => response.json())
+      .then(data => {
+          const imageString = data.serializedImages; // Assuming the image string is returned in the 'image' property of the response JSON
+          for (let imagePhoto in imageString) {
+              const image = new Image();
+              let imagen = imageString[imagePhoto]; 
+              image.src = `data:image/jpeg;charset=utf-8;base64, ${imagen}`;
+              document.getElementById("imagecontainer").appendChild(image);
+          }
+      })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+  }
 
-  return (<div className="container al-c mt-3">
-    <form className="gen-form" onSubmit={handleSubmit}>
-      <input type="text" name="input" placeholder="type your prompt here..." />
-      <button type="submit">Generate</button>
-    </form>
-    <div>
-    {loading && <div className="loading">Loading...</div>}
-    {!loading && output && (
-      <div className="result-image">
-        <img src={output} alt="art"  />
+  return (
+    <div className="flex flex-col justify-center items-center gap-10 mt-10">
+      <h1 className="font-bold text-4xl">Imagen</h1>
+      <div className="flex gap-5">
+        <input type="text" name="text" placeholder="Enter the prompt" className={cn("w-[400px] h-[40px] p-2 rounded-md")} onChange={(e)=>{
+          setText(e.target.value);
+        }} />
+        <button className="bg-black text-white font-bold px-5 rounded-md" onClick={onSubmit}>Submit</button>
       </div>
-    )}
     </div>
-</div>);
-  
-};
+  )
+}
 
-export default ImageGenerationForm;
+export default ImageGenerator;
