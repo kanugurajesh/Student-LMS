@@ -48,5 +48,19 @@ docker run -d -p 3000:3000 --name your_container_name your_image_name:tag
 # The application will run on http://localhost:3000
 ```
 
+## Tech Stack
+
+- Next.js
+- Tailwindcss
+- Gemini Pro
+- Markdown
+- Vercel
+- Text to Image generation API
+
+## Authors
+
+- [@kanugurajesh](https://github.com/kanugurajesh)
+- [@Shra1V32](https://github.com/Shra1V32)
+
 ### More Details
 <b>docosauras documentation :-</b> https://shra1v32.github.io/docusaurus-blogger/docs/GraphifyEd/intro
