@@ -66,6 +66,10 @@
   }
 }
  
+.backg {
+  background-color: #d6e2ea;
+}
+
 @layer base {
   * {
     @apply border-border;

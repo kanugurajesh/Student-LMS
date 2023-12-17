@@ -214,7 +214,7 @@ export default function Page({ params }: { params: { name: string } }) {
                         </div>
                     )}
                     <h1 className='text-1xl font-bold mt-1'>Based on you performance we are creating a learning path to learn <span className="text-red-500">{name}</span></h1>
-                    <Card className={cn("p-5 whitespace-normal min-w-[320px] sm:w-[500px] md:min-w-[600px] min-h-[150px] max-h-[400px] lg:min-w-[700px] overflow-y-scroll")}>
+                    <Card className={cn("p-5 whitespace-normal min-w-[320px] sm:w-[500px] md:min-w-[600px]")}>
                         <div className={styles.textwrapper}>
                             <Markdown className={cn("w-full h-full ")}>{`${output}`}</Markdown>
                         </div>
