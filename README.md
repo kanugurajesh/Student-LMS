@@ -48,6 +48,14 @@ docker run -d -p 3000:3000 --name your_container_name your_image_name:tag
 # The application will run on http://localhost:3000
 ```
 
+## Contribution Guidelines
+
+We welcome contributions to enhance and improve the llm app. If you have ideas or improvements, feel free to submit a pull request following our contribution guidelines.
+
+## Feedback and Issues
+
+If you encounter any issues or have feedback, please open an issue on our [GitHub repository](https://github.com/kanugurajesh/Student-LMS/issues). We appreciate your input and strive to make our system better with each update.
+
 ## Tech Stack
 
 - Next.js
