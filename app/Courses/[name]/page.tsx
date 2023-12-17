@@ -187,7 +187,7 @@ export default function Page({ params }: { params: { name: string } }) {
             </>
             ) : (
                 <div className='flex flex-col items-center h-screen gap-6'>
-                    <h1 className='text-2xl mt-5 font-bold'>You scored {score} out of {content?.questions.length}</h1>
+                    <h1 className='text-2xl mt-2 font-bold'>You scored {score} out of {content?.questions.length}</h1>
                     <Button onClick={() => {
                         setProgress(10)
                         setScore(0)
@@ -203,13 +203,13 @@ export default function Page({ params }: { params: { name: string } }) {
                     ) }
                     {score > 2 && score <= 6 && (
                         <div className="flex items-center flex-col gap-5">
-                            <h1 className='text-2xl font-bold'>Congratulations you have obtained a silver medal</h1>
+                            <h1 className='text-2xl font-bold'>Congratulations you have obtained a <span className="font-black text-red-500">Silver Medal</span></h1>
                             <Image src="/icons/silvermedal.svg" width={100} height={100} />
                         </div>
                     ) }
                     {score <= 2 && (
                         <div className="flex items-center flex-col gap-5">
-                            <h1 className='text-2xl font-bold'>Congratulations you have obtained a bronze medal</h1>
+                            <h1 className='text-2xl font-bold'>Congratulations you have obtained a <span className="font-black text-red-500">Bronze Medal</span></h1>
                             <Image src="/icons/bronzemedal.svg" width={100} height={100} />
                         </div>
                     )}
