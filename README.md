@@ -76,7 +76,7 @@ docker run -d -p 3000:3000 --name your_container_name your_image_name:tag
 
 ![Screenshot 2023-12-17 214456](https://github.com/kanugurajesh/Student-LMS/assets/120458029/6fd51459-ed5a-458d-88de-d9c932209711)
 
-
+![Screenshot 2023-12-17 222624](https://github.com/kanugurajesh/Student-LMS/assets/120458029/2f62fc69-d0ee-4c14-b584-b69173636c5a)
 
 ## Contribution Guidelines
 
