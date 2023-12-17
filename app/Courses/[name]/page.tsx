@@ -1,9 +1,11 @@
 // @ts-nocheck
 "use client";
+
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { useEffect, useState } from 'react';
 import { Progress } from "@/components/ui/progress"
+import { Card } from "@/components/ui/card";
 import { cn } from '@/lib/utils';
 import React from 'react'
 import { Button } from "@/components/ui/button";
@@ -49,12 +51,9 @@ export default function Page({ params }: { params: { name: string } }) {
     });
 
     // State Machine Inputs
-    const isCheckingInput: StateMachineInput = useStateMachineInput(riveInstance, STATE_MACHINE_NAME, 'isChecking');
-    const numLookInput: StateMachineInput = useStateMachineInput(riveInstance, STATE_MACHINE_NAME, 'numLook');
     const trigSuccessInput: StateMachineInput = useStateMachineInput(riveInstance, STATE_MACHINE_NAME, 'trigSuccess');
     const trigFailInput: StateMachineInput = useStateMachineInput(riveInstance, STATE_MACHINE_NAME, 'trigFail');
     const isHandsUpInput: StateMachineInput = useStateMachineInput(riveInstance, STATE_MACHINE_NAME, 'isHandsUp');
-
 
     // read the file from the file system with the `name`
     const readFile = async (name: string) => {
@@ -68,7 +67,7 @@ export default function Page({ params }: { params: { name: string } }) {
         setCount(count + 1)
 
         if (question?.correctOption == chosen) {
-            setScore(() => score + 1)
+            setScore(score + 1)
             trigSuccessInput.fire()
         } else {
             trigFailInput.fire()
@@ -92,7 +91,9 @@ export default function Page({ params }: { params: { name: string } }) {
 
     return (
         <div className="around">
-            <div className="rive-container">
+            {progress <= 100 ? (
+            <>
+                <div className="rive-container">
                 <div className="rive-wrapper">
                     <RiveComponent className="rive-container"/>
                 </div>
@@ -132,8 +133,21 @@ export default function Page({ params }: { params: { name: string } }) {
                 <Button onClick={() => {
                     onNext()
                 }
-                }>Next</Button>
+                }>{progress < 100 ? "Next" : "Submit"}</Button>
             </div>
+            </>
+            ) : (
+                <div className='flex flex-col mt-5 items-center h-screen gap-6'>
+                    <h1 className='text-2xl font-bold'>You scored {score} out of {content?.questions.length}</h1>
+                    <Button onClick={() => {
+                        setProgress(10)
+                        setScore(0)
+                        setCount(0)
+                        setQuestion(content?.questions[0])
+                    }
+                    }>Restart</Button>
+                </div>
+            )}
         </div>
     )
 }
