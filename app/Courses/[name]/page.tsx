@@ -15,6 +15,7 @@ import { useRive, RiveState, useStateMachineInput, StateMachineInput, Layout, Fi
 import styles from '@/styles/styles.module.css'
 import "@/styles/LoginFormComponent.css";
 import Confetti from "@/components/Confetti";
+import Link from "next/link";
 
 export default function Page({ params }: { params: { name: string } }) {
 
@@ -38,40 +39,37 @@ export default function Page({ params }: { params: { name: string } }) {
 
         // clear the output
         setOutput("The response will appear here...");
-    
+
         // create a post request to the /api/chat endpoint
         const response = await fetch("/api/chat", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            userPrompt: `hello I have obtained a score of ${score}/${content?.questions.length} in ${name} based on my performance I would like to learn ${name} can you suggest me a learning path?`,
-          }),
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                userPrompt: `hello I have obtained a score of ${score}/${content?.questions.length} in ${name} based on my performance I would like to learn ${name} can you suggest me a learning path?`,
+            }),
         });
-    
+
         // get the response from the server
         const data = await response.json();
-        console.log(data)
-        console.log(data.text)
-        console.log(score)
         // set the response in the state
         setResponse(data.text);
-      };
+    };
 
-      useEffect(() => {
+    useEffect(() => {
         // update the response character by character in the output
         if (response.length === 0) return;
-    
+
         setOutput("");
-        
+
         for (let i = 0; i < response.length; i++) {
-          setTimeout(() => {
-            setOutput((prev) => prev + response[i]);
-          }, i * 10);
+            setTimeout(() => {
+                setOutput((prev) => prev + response[i]);
+            }, i * 10);
         }
-        
-      }, [response]);
+
+    }, [response]);
 
     const STATE_MACHINE_NAME = 'Login Machine'
 
@@ -117,7 +115,7 @@ export default function Page({ params }: { params: { name: string } }) {
 
         setQuestion(content?.questions[count + 1])
 
-        
+
         if (progress >= 100) {
             onSubmit()
             return
@@ -141,50 +139,50 @@ export default function Page({ params }: { params: { name: string } }) {
     return (
         <div className="around">
             {progress < 110 ? (
-            <>
-                <div className="rive-container">
-                <div className="rive-wrapper">
-                    <RiveComponent className="rive-container"/>
-                </div>
-            </div>
-            <div className='flex flex-col mt-5 items-center h-screen gap-6'>
-                <Progress value={progress} className={cn("w-[60%]")} />
-                <div className='w-[60%] flex justify-center'>
-                    <h1 className='text-2xl font-bold'>{question?.question}</h1>
-                </div>
+                <>
+                    <div className="rive-container">
+                        <div className="rive-wrapper">
+                            <RiveComponent className="rive-container" />
+                        </div>
+                    </div>
+                    <div className='flex flex-col mt-5 items-center h-screen gap-6'>
+                        <Progress value={progress} className={cn("w-[60%]")} />
+                        <div className='w-[60%] flex justify-center'>
+                            <h1 className='text-2xl font-bold'>{question?.question}</h1>
+                        </div>
 
-                <RadioGroup defaultValue="comfortable">
-                    <div className="flex items-center space-x-2">
-                        <RadioGroupItem value={question?.options[0]} id="r1" onClick={(e) => {
-                            setChosen(e.target.value)
-                        }} />
-                        <Label htmlFor="r1">{question?.options[0]}</Label>
+                        <RadioGroup defaultValue="comfortable">
+                            <div className="flex items-center space-x-2">
+                                <RadioGroupItem value={question?.options[0]} id="r1" onClick={(e) => {
+                                    setChosen(e.target.value)
+                                }} />
+                                <Label htmlFor="r1">{question?.options[0]}</Label>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <RadioGroupItem value={question?.options[1]} id="r2" onClick={(e) => {
+                                    setChosen(e.target.value)
+                                }} />
+                                <Label htmlFor="r2">{question?.options[1]}</Label>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <RadioGroupItem value={question?.options[2]} id="r3" onClick={(e) => {
+                                    setChosen(e.target.value)
+                                }} />
+                                <Label htmlFor="r3">{question?.options[2]}</Label>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <RadioGroupItem value={question?.options[3]} id="r4" onClick={(e) => {
+                                    setChosen(e.target.value)
+                                }} />
+                                <Label htmlFor="r4">{question?.options[3]}</Label>
+                            </div>
+                        </RadioGroup>
+                        <Button onClick={() => {
+                            onNext()
+                        }
+                        }>{progress <= 110 ? "Next" : "Submit"}</Button>
                     </div>
-                    <div className="flex items-center space-x-2">
-                        <RadioGroupItem value={question?.options[1]} id="r2" onClick={(e) => {
-                            setChosen(e.target.value)
-                        }} />
-                        <Label htmlFor="r2">{question?.options[1]}</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                        <RadioGroupItem value={question?.options[2]} id="r3" onClick={(e) => {
-                            setChosen(e.target.value)
-                        }} />
-                        <Label htmlFor="r3">{question?.options[2]}</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                        <RadioGroupItem value={question?.options[3]} id="r4" onClick={(e) => {
-                            setChosen(e.target.value)
-                        }} />
-                        <Label htmlFor="r4">{question?.options[3]}</Label>
-                    </div>
-                </RadioGroup>
-                <Button onClick={() => {
-                    onNext()
-                }
-                }>{progress <= 110 ? "Next" : "Submit"}</Button>
-            </div>
-            </>
+                </>
             ) : (
                 <div className='flex flex-col items-center h-screen gap-6'>
                     <h1 className='text-2xl mt-2 font-bold'>You scored {score} out of {content?.questions.length}</h1>
@@ -203,7 +201,7 @@ export default function Page({ params }: { params: { name: string } }) {
                                 <Image src="/icons/goldmedal.svg" width={100} height={100} />
                             </div>
                         </>
-                    ) }
+                    )}
                     {score > 2 && score <= 6 && (
                         <>
                             <Confetti />
@@ -212,7 +210,7 @@ export default function Page({ params }: { params: { name: string } }) {
                                 <Image src="/icons/silvermedal.svg" width={100} height={100} />
                             </div>
                         </>
-                    ) }
+                    )}
                     {score <= 2 && (
                         <>
                             <Confetti />
@@ -228,6 +226,10 @@ export default function Page({ params }: { params: { name: string } }) {
                             <Markdown className={cn("w-full h-full ")}>{`${output}`}</Markdown>
                         </div>
                     </Card>
+                    {/* create a Link to redirect to /leaderboard */}
+                    <Link href="/Leaderboard">
+                        <Button>Go to Leaderboard</Button>
+                    </Link>
                 </div>
             )}
         </div>
