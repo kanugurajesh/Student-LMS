@@ -197,7 +197,7 @@ export default function Page({ params }: { params: { name: string } }) {
                     }>Restart</Button>
                     {score > 6 && (
                         <div className="flex items-center flex-col gap-5">
-                            <h1 className='text-2xl font-bold'>Congratulations you have obtained a gold medal</h1>
+                            <h1 className='text-2xl font-bold'>Congratulations you have obtained a <span className="font-black text-red-500">Gold medal</span></h1>
                             <Image src="/icons/goldmedal.svg" width={100} height={100} />
                         </div>
                     ) }
