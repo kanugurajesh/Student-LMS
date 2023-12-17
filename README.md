@@ -76,6 +76,9 @@ docker run -d -p 3000:3000 --name your_container_name your_image_name:tag
 
 ![Screenshot 2023-12-17 223051](https://github.com/kanugurajesh/Student-LMS/assets/120458029/2c9e168d-2375-471b-af0a-f898a00080f9)
 
+## Demo
+### Click on the below image to see the video
+[![Study LMS](https://github.com/kanugurajesh/Student-LMS/assets/120458029/8af3e8f9-dd34-4b17-88ca-1366d70af672)](https://youtu.be/c_jkQChl06k?feature=shared)
 
 ## Contribution Guidelines
 
