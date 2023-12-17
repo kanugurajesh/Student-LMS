@@ -72,6 +72,11 @@ docker run -d -p 3000:3000 --name your_container_name your_image_name:tag
 
 ![Screenshot 2023-12-17 222624](https://github.com/kanugurajesh/Student-LMS/assets/120458029/2f62fc69-d0ee-4c14-b584-b69173636c5a)
 
+![Screenshot 2023-12-17 223037](https://github.com/kanugurajesh/Student-LMS/assets/120458029/d7df65f2-ecb0-4396-a232-24d7d988109c)
+
+![Screenshot 2023-12-17 223051](https://github.com/kanugurajesh/Student-LMS/assets/120458029/2c9e168d-2375-471b-af0a-f898a00080f9)
+
+
 ## Contribution Guidelines
 
 We welcome contributions to enhance and improve the llm app. If you have ideas or improvements, feel free to submit a pull request following our contribution guidelines.
