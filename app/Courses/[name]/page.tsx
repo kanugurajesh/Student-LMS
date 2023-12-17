@@ -186,8 +186,8 @@ export default function Page({ params }: { params: { name: string } }) {
             </div>
             </>
             ) : (
-                <div className='flex flex-col mt-5 items-center h-screen gap-6'>
-                    <h1 className='text-2xl font-bold'>You scored {score} out of {content?.questions.length}</h1>
+                <div className='flex flex-col items-center h-screen gap-6'>
+                    <h1 className='text-2xl mt-5 font-bold'>You scored {score} out of {content?.questions.length}</h1>
                     <Button onClick={() => {
                         setProgress(10)
                         setScore(0)
