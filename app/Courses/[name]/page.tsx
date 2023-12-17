@@ -13,9 +13,7 @@ import { Button } from "@/components/ui/button";
 import { useRef } from "react";
 import { useRive, RiveState, useStateMachineInput, StateMachineInput, Layout, Fit, Alignment, RiveProps } from 'rive-react';
 import styles from '@/styles/styles.module.css'
-
 import "@/styles/LoginFormComponent.css";
-import { isModuleNamespaceObject } from "util/types";
 
 export default function Page({ params }: { params: { name: string } }) {
 
@@ -29,10 +27,7 @@ export default function Page({ params }: { params: { name: string } }) {
     const [question, setQuestion] = useState();
     const [progress, setProgress] = useState(10);
 
-    const [userValue, setUserValue] = useState('');
-    const [passValue, setPassValue] = useState('');
     const [inputLookMultiplier, setInputLookMultiplier] = useState(0);
-    const [loginButtonText, setLoginButtonText] = useState('Login');
     const inputRef = useRef(null);
 
     const [response, setResponse] = useState("");
@@ -44,23 +39,23 @@ export default function Page({ params }: { params: { name: string } }) {
         setOutput("The response will appear here...");
     
         // create a post request to the /api/chat endpoint
-        const response = await fetch("api/chat", {
+        const response = await fetch("/api/chat", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            userPrompt: `hello I have obtained a score of ${score}/${content?.questions.length} in ${name} based on my performance I would like to learn more about ${name} can you suggest me a learning path?`,
+            userPrompt: `hello I have obtained a score of ${score}/${content?.questions.length} in ${name} based on my performance I would like to learn ${name} can you suggest me a learning path?`,
           }),
         });
     
         // get the response from the server
         const data = await response.json();
+        console.log(data)
+        console.log(data.text)
+        console.log(score)
         // set the response in the state
         setResponse(data.text);
-
-        console.log(response)
-    
       };
 
       useEffect(() => {
@@ -107,10 +102,7 @@ export default function Page({ params }: { params: { name: string } }) {
     }
 
     const onNext = () => {
-        if (progress >= 100) {
-            onSubmit()
-            return
-        }
+
         setProgress(progress + 10)
 
         setCount(count + 1)
@@ -123,6 +115,13 @@ export default function Page({ params }: { params: { name: string } }) {
         }
 
         setQuestion(content?.questions[count + 1])
+
+        
+        if (progress >= 100) {
+            onSubmit()
+            return
+        }
+
     }
 
     useEffect(() => {
@@ -140,7 +139,7 @@ export default function Page({ params }: { params: { name: string } }) {
 
     return (
         <div className="around">
-            {progress < 100 ? (
+            {progress < 110 ? (
             <>
                 <div className="rive-container">
                 <div className="rive-wrapper">
@@ -182,7 +181,7 @@ export default function Page({ params }: { params: { name: string } }) {
                 <Button onClick={() => {
                     onNext()
                 }
-                }>{progress < 100 ? "Next" : "Submit"}</Button>
+                }>{progress <= 110 ? "Next" : "Submit"}</Button>
             </div>
             </>
             ) : (
