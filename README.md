@@ -24,5 +24,29 @@ Unleash your creativity with "Imagens," a magical text-to-image converter that t
 
 But that's not all – we believe in personalized learning! 🎓 Assessments are conducted to understand your strengths and areas for growth. Based on your unique capabilities, we tailor personalized learning paths to ensure you grasp concepts at your own pace. 🌐📚
 
+## Project Setup
+
+### Local Setup
+
+```bash
+git clone https://github.com/kanugurajesh/Student-LMS.git
+cd Student-LMS
+cp .env.example .env.local
+# Add the required api keys
+npm install
+npm run dev
+# The application will run on http://localhost:3000
+```
+
+### Docker Setup
+
+```bash
+git clone https://github.com/kanugurajesh/Student-LMS.git
+cd Student-LMS
+docker build -t your_image_name:tag .
+docker run -d -p 3000:3000 --name your_container_name your_image_name:tag
+# The application will run on http://localhost:3000
+```
+
 ### More Details
 <b>docosauras documentation :-</b> https://shra1v32.github.io/docusaurus-blogger/docs/GraphifyEd/intro
