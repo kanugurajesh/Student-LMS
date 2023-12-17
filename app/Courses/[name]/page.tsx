@@ -1,6 +1,6 @@
 // @ts-nocheck
 "use client";
-
+import Image from "next/image";
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { useEffect, useState } from 'react';
@@ -14,6 +14,7 @@ import { useRef } from "react";
 import { useRive, RiveState, useStateMachineInput, StateMachineInput, Layout, Fit, Alignment, RiveProps } from 'rive-react';
 import styles from '@/styles/styles.module.css'
 import "@/styles/LoginFormComponent.css";
+import { Divide } from "lucide-react";
 
 export default function Page({ params }: { params: { name: string } }) {
 
@@ -194,7 +195,25 @@ export default function Page({ params }: { params: { name: string } }) {
                         setQuestion(content?.questions[0])
                     }
                     }>Restart</Button>
-                    <h1 className='text-1xl font-bold mt-5'>Based on you performance we are creating a learning path to learn <span className="text-red-500">{name}</span></h1>
+                    {score > 6 && (
+                        <div className="flex items-center flex-col gap-5">
+                            <h1 className='text-2xl font-bold'>Congratulations you have obtained a gold medal</h1>
+                            <Image src="/icons/goldmedal.svg" width={100} height={100} />
+                        </div>
+                    ) }
+                    {score > 2 && score <= 6 && (
+                        <div className="flex items-center flex-col gap-5">
+                            <h1 className='text-2xl font-bold'>Congratulations you have obtained a silver medal</h1>
+                            <Image src="/icons/silvermedal.svg" width={100} height={100} />
+                        </div>
+                    ) }
+                    {score <= 2 && (
+                        <div className="flex items-center flex-col gap-5">
+                            <h1 className='text-2xl font-bold'>Congratulations you have obtained a bronze medal</h1>
+                            <Image src="/icons/bronzemedal.svg" width={100} height={100} />
+                        </div>
+                    )}
+                    <h1 className='text-1xl font-bold mt-1'>Based on you performance we are creating a learning path to learn <span className="text-red-500">{name}</span></h1>
                     <Card className={cn("p-5 whitespace-normal min-w-[320px] sm:w-[500px] md:min-w-[600px] min-h-[150px] max-h-[400px] lg:min-w-[700px] overflow-y-scroll")}>
                         <div className={styles.textwrapper}>
                             <Markdown className={cn("w-full h-full ")}>{`${output}`}</Markdown>
