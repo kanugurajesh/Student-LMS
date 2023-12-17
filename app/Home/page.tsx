@@ -18,8 +18,8 @@ export default function Home() {
                     <div className={styles.logoText}>raphifyEd</div>
                 </div>
                 <div className={`${styles.navitems}`}>
-                    <Link href="/Home" className={styles.navlist}>
-                        About
+                    <Link href="/Imagen" className={styles.navlist}>
+                        Imagen
                     </Link>
                     <Link href="/Chat" className={styles.navlist}>
                         Chat
