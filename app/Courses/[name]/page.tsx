@@ -7,12 +7,15 @@ import { useEffect, useState } from 'react';
 import { Progress } from "@/components/ui/progress"
 import { Card } from "@/components/ui/card";
 import { cn } from '@/lib/utils';
+import Markdown from 'react-markdown'
 import React from 'react'
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
 import { useRive, RiveState, useStateMachineInput, StateMachineInput, Layout, Fit, Alignment, RiveProps } from 'rive-react';
+import styles from '@/styles/styles.module.css'
 
 import "@/styles/LoginFormComponent.css";
+import { isModuleNamespaceObject } from "util/types";
 
 export default function Page({ params }: { params: { name: string } }) {
 
@@ -31,6 +34,48 @@ export default function Page({ params }: { params: { name: string } }) {
     const [inputLookMultiplier, setInputLookMultiplier] = useState(0);
     const [loginButtonText, setLoginButtonText] = useState('Login');
     const inputRef = useRef(null);
+
+    const [response, setResponse] = useState("");
+    const [output, setOutput] = useState("The response will appear here...");
+
+    const onSubmit = async () => {
+
+        // clear the output
+        setOutput("The response will appear here...");
+    
+        // create a post request to the /api/chat endpoint
+        const response = await fetch("api/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userPrompt: `hello I have obtained a score of ${score}/${content?.questions.length} in ${name} based on my performance I would like to learn more about ${name} can you suggest me a learning path?`,
+          }),
+        });
+    
+        // get the response from the server
+        const data = await response.json();
+        // set the response in the state
+        setResponse(data.text);
+
+        console.log(response)
+    
+      };
+
+      useEffect(() => {
+        // update the response character by character in the output
+        if (response.length === 0) return;
+    
+        setOutput("");
+        
+        for (let i = 0; i < response.length; i++) {
+          setTimeout(() => {
+            setOutput((prev) => prev + response[i]);
+          }, i * 10);
+        }
+        
+      }, [response]);
 
     const STATE_MACHINE_NAME = 'Login Machine'
 
@@ -62,6 +107,10 @@ export default function Page({ params }: { params: { name: string } }) {
     }
 
     const onNext = () => {
+        if (progress >= 100) {
+            onSubmit()
+            return
+        }
         setProgress(progress + 10)
 
         setCount(count + 1)
@@ -91,7 +140,7 @@ export default function Page({ params }: { params: { name: string } }) {
 
     return (
         <div className="around">
-            {progress <= 100 ? (
+            {progress < 100 ? (
             <>
                 <div className="rive-container">
                 <div className="rive-wrapper">
@@ -146,6 +195,12 @@ export default function Page({ params }: { params: { name: string } }) {
                         setQuestion(content?.questions[0])
                     }
                     }>Restart</Button>
+                    <h1 className='text-1xl font-bold mt-5'>Based on you performance we are creating a learning path to learn <span className="text-red-500">{name}</span></h1>
+                    <Card className={cn("p-5 whitespace-normal min-w-[320px] sm:w-[500px] md:min-w-[600px] min-h-[150px] max-h-[400px] lg:min-w-[700px] overflow-y-scroll")}>
+                        <div className={styles.textwrapper}>
+                            <Markdown className={cn("w-full h-full ")}>{`${output}`}</Markdown>
+                        </div>
+                    </Card>
                 </div>
             )}
         </div>
