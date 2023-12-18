@@ -101,6 +101,7 @@ If you encounter any issues or have feedback, please open an issue on our [GitHu
 
 - [@kanugurajesh](https://github.com/kanugurajesh)
 - [@Shra1V32](https://github.com/Shra1V32)
+- [@YashwanthKumar02](https://github.com/YashwanthKumar02)
 
 ### More Details
 <b>docosauras documentation :-</b> https://shra1v32.github.io/docusaurus-blogger/docs/GraphifyEd/intro
