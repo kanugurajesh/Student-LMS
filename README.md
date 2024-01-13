@@ -103,5 +103,9 @@ If you encounter any issues or have feedback, please open an issue on our [GitHu
 - [@Shra1V32](https://github.com/Shra1V32)
 - [@YashwanthKumar02](https://github.com/YashwanthKumar02)
 
+## My Certificates
+
+[My Certificate.pdf](https://github.com/kanugurajesh/Student-LMS/files/13929166/Kanugu.Rajesh.2.pdf)
+
 ### More Details
 <b>docosauras documentation :-</b> https://shra1v32.github.io/docusaurus-blogger/docs/GraphifyEd/intro
