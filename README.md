@@ -102,8 +102,6 @@ If you encounter any issues or have feedback, please open an issue on our [GitHu
 ## Authors
 
 - [@kanugurajesh](https://github.com/kanugurajesh)
-- [@Shra1V32](https://github.com/Shra1V32)
-- [@YashwanthKumar02](https://github.com/YashwanthKumar02)
 
 ## My Certificates
 
